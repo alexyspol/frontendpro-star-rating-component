@@ -1,0 +1,95 @@
+// Stylus variables
+$color-bg = #e6e9fb
+$color-star-default = #e3e8ef
+
+*
+  box-sizing border-box
+
+:root
+  --color-bg $color-bg
+  --color-star-active #fbcc15
+  --color-star-default $color-star-default
+
+  --spacing-vert 16rem
+
+  --roundness 8rem
+
+  --fontsize-question 18rem
+  --fontsize-feedback 14rem
+
+html
+  font-size 6.25%
+
+body
+  font-size 16rem
+  background-color var(--color-bg)
+
+.container
+  width 100%
+  max-width 600rem
+  margin 0 auto
+  padding-inline 16rem
+  min-height 100vh
+  display flex
+  align-items center
+  justify-content center
+
+.question
+  margin-top 0
+  margin-bottom var(--spacing-vert)
+  font-family 'Roboto Slab', serif
+  font-size var(--fontsize-question)
+  line-height 1.5
+
+.card
+  background-color white
+  padding 50rem
+  width 100%
+  text-align center
+  border-radius var(--roundness)
+  box-shadow @border-radius @border-radius 0 lighten(mix($color-bg, blue), 90%)
+
+.star-container
+  display flex
+
+for num in (1..5)
+  .star-container[data-rating=\"{num}\"]
+    margin-bottom var(--spacing-vert)
+
+    & .star:nth-child(-n + {num}) svg
+      fill var(--color-star-active)
+
+    & ~ .feedback-container .rated-{num}-star
+      display block
+
+.star
+  flex 1
+  display flex
+  align-items center
+  justify-content center
+  cursor pointer
+
+.star-radio
+  display none
+
+.star svg
+  fill var(--color-star-default)
+
+.star svg.is-shining
+  fill var(--color-star-active)
+
+.feedback-container
+  padding 0
+  margin 0
+  list-style none
+
+.feedback
+  display none
+  font-family 'Roboto', sans-serif
+  font-size var(--fontsize-feedback)
+  line-height 1.6
+  color darken($color-star-default, 30%)
+
+::selection
+  background-color var(--color-star-active)
+  color white
