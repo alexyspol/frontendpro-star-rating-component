@@ -78,6 +78,11 @@ for num in (1..5)
 
 .star svg
   fill var(--color-star-default)
+  width 50rem
+  height @width
+
+  @media screen and (max-width: 400px)
+    width 30rem
 
 .star svg.is-shining
   fill var(--color-star-active)
