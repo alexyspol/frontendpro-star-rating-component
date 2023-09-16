@@ -2,7 +2,6 @@
   "name": "frontendpro-star-rating-component",
   "version": "1.0.0",
   "description": "![Star Rating Component](./design/Rating-5.png)",
-  "main": "index.js",
   "source": "src/index.html",
   "scripts": {
     "start": "parcel",
