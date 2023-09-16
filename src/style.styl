@@ -59,8 +59,12 @@ for num in (1..5)
     & .star:nth-child(-n + {num}) svg
       fill var(--color-star-active)
 
-    & ~ .feedback-container .rated-{num}-star
-      display block
+    if num is 1
+      & ~ .feedback-container .rated-{num}-star
+        display block
+    else
+      & ~ .feedback-container .rated-{num}-stars
+        display block
 
 .star
   flex 1
