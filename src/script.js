@@ -1,6 +1,4 @@
 document.addEventListener('DOMContentLoaded', function() {
-    let starRating = -1;
-    let hovering = -1;
 
     class RatingApp {
         constructor(controller) {
